@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """
-iPhoneEventSimulator.h
+iPhoneEventSimulator.py
 
 Copyright (c) 2012, Thomas Broquist
 All rights reserved.
