@@ -1,7 +1,7 @@
 iphone-event-simulator
 ======================
 
-Map apple keyboard event to events on the iPhone simulator
+Map apple keyboard events to events on the iPhone simulator
 
 About:
 
@@ -13,9 +13,9 @@ Usage:
 
 In your app, add the files iPhoneEventSimulator.h and iPhoneEventSimulator.mm.
 
-To register events, first get a copy of the iPhoneEventSimulator singleton:
-
+To register events: 
 ```Objective-C
+// first get a copy of the iPhoneEventSimulator singleton:
 // The port 10552 is hardcoded in the python program.
 iPhoneEventSimulator *sim = [iPhoneEventSimulator sharedSimulatorWithPort:10552];
 
@@ -41,9 +41,7 @@ iPhoneEventSimulator *sim = [iPhoneEventSimulator sharedSimulatorWithPort:10552]
 [sim resetHandlers];
 ```
 
-
 Compile and run the app in the simulator. When it is runnning, start the python program from the terminal:
-
 ```bash
 $ ./bin/iPhoneEventSimulator.py
 ```
@@ -54,9 +52,7 @@ event-handlers in the iPhone simulator.
 Notes:
 
 * The key-codes are defined in the header-file.
-
 * This code should only be used on the simulator, so protect it by:
-
 ```Objective-C
 #ifndef TARGET_IPHONE_SIMULATOR
 #endif
