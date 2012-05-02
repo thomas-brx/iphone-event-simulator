@@ -15,36 +15,36 @@ In your app, add the files iPhoneEventSimulator.h and iPhoneEventSimulator.mm.
 
 To register events, first get a copy of the iPhoneEventSimulator singleton:
 
-iPhoneEventSimulator *sim = [iPhoneEventSimulator sharedSimulatorWithPort:10552];
+    // The port 10552 is hardcoded in the python program.
 
-The port 10552 is hardcoded in the python program.
+    iPhoneEventSimulator *sim = [iPhoneEventSimulator sharedSimulatorWithPort:10552];
 
-Then register events for different key-codes:
+    // Then register events for different key-codes:
 
-[sim addHandlersForKey:K_LEFT
-               keyDown:^() {
-		       [hero moveLeft];
-	       }
-                 keyUp:^() {
+    [sim addHandlersForKey:K_LEFT
+                   keyDown:^() {
+	               [hero moveLeft];
+	           }
+                     keyUp:^() {
 		       [hero stopMoving];
-	       }
-];
-[sim addHandlersForKey:K_ESCAPE
-               keyDown:^() {
-		       exit(1);
-	       }
-                 keyUp:nil
-];
+	           }
+    ];
+    [sim addHandlersForKey:K_ESCAPE
+                   keyDown:^() {
+                       exit(1);
+	           }
+                     keyUp:nil
+    ];
 
 
-To unregister events:
+    // To unregister events:
 
-[sim resetHandlers];
+    [sim resetHandlers];
 
 
 Compile and run the app in the simulator. When it is runnning, start the python program from the terminal:
 
-$ ./bin/iPhoneEventSimulator.py
+    $ ./bin/iPhoneEventSimulator.py
 
 Make sure the spawned Python-app has focus. Now all key-presses are broadcasted and will trigger the corresponding
 event-handlers in the iPhone simulator.
@@ -55,10 +55,5 @@ Notes:
 
 * This code should only be used on the simulator, so protect it by:
 
-#ifndef TARGET_IPHONE_SIMULATOR
-#endif
-
-
-
-
-
+    #ifndef TARGET_IPHONE_SIMULATOR
+    #endif
