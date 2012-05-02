@@ -53,5 +53,5 @@ Notes:
 
 * This code should only be used on the simulator, so protect it by:
 
-    ##ifndef TARGET_IPHONE_SIMULATOR
-    ##endif
+    \#ifndef TARGET_IPHONE_SIMULATOR
+    \#endif
