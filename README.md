@@ -16,17 +16,15 @@ In your app, add the files iPhoneEventSimulator.h and iPhoneEventSimulator.mm.
 To register events, first get a copy of the iPhoneEventSimulator singleton:
 
     // The port 10552 is hardcoded in the python program.
-
     iPhoneEventSimulator *sim = [iPhoneEventSimulator sharedSimulatorWithPort:10552];
 
     // Then register events for different key-codes:
-
     [sim addHandlersForKey:K_LEFT
                    keyDown:^() {
 	               [hero moveLeft];
 	           }
                      keyUp:^() {
-		       [hero stopMoving];
+                       [hero stopMoving];
 	           }
     ];
     [sim addHandlersForKey:K_ESCAPE
@@ -55,5 +53,5 @@ Notes:
 
 * This code should only be used on the simulator, so protect it by:
 
-    #ifndef TARGET_IPHONE_SIMULATOR
-    #endif
+    ##ifndef TARGET_IPHONE_SIMULATOR
+    ##endif
