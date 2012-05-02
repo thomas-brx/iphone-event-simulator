@@ -53,6 +53,7 @@ Notes:
 
 * The key-codes are defined in the header-file.
 * This code should only be used on the simulator, so protect it by:
+
 ```Objective-C
 #ifndef TARGET_IPHONE_SIMULATOR
 #endif
