@@ -46,7 +46,6 @@ either expressed or implied, of the FreeBSD Project.
 		
 		return sharedSingleton;
 	}
-#endif
 }
 
 void readCallback(
