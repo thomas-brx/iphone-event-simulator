@@ -55,6 +55,6 @@ Notes:
 * This code should only be used on the simulator, so protect it by:
 
 ```Objective-C
-#ifdef TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR
 #endif
 ```
